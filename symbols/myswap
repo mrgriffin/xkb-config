@@ -1,0 +1,75 @@
+partial alphanumeric_keys modifier_keys
+xkb_symbols "swap_ctrl_alt" {
+	key.type = "ONE_LEVEL";
+	key <LALT> { [ Control_L ] };
+	key <LCTL> { [ Alt_L, Meta_L ] };
+	key <RALT> { [ Control_R ] };
+	// Use win instead of alt for right ctrl, alt is less frequently
+	// used than window manager commands.
+	key <RCTL> { [ Super_R ] };
+
+	modifier_map Mod1 { Alt_L, Alt_R, Meta_L, Meta_R };
+	modifier_map Mod4 { Super_L, Super_R };
+	modifier_map Shift { Shift_L, Shift_R };
+	modifier_map Control { Control_L, Control_R };
+};
+
+xkb_symbols "force_shift" {
+	key <RTSH> {
+		type[Group1]="ONE_LEVEL",
+		symbols[Group1] = [ ISO_Level3_Shift ],
+		actions[Group1] = [ SetMods(modifiers=Shift+LevelThree) ]
+	};
+	include "level3(modifier_mapping)"
+
+	key <TLDE> { [ dollar, VoidSymbol, VoidSymbol, asciitilde ] };
+	key <AE01> { [ ampersand, VoidSymbol, VoidSymbol, percent ] };
+	key <AE02> { [ bracketleft, VoidSymbol, VoidSymbol, 7 ] };
+	key <AE03> { [ braceleft, VoidSymbol, VoidSymbol, 5 ] };
+	key <AE04> { [ braceright, VoidSymbol, VoidSymbol, 3 ] };
+	key <AE05> { [ parenleft, VoidSymbol, VoidSymbol, 1 ] };
+	key <AE06> { [ equal, 9, VoidSymbol, 9 ] };
+	key <AE07> { [ asterisk, 0, VoidSymbol, VoidSymbol ] };
+	key <AE08> { [ parenright, 2, VoidSymbol, VoidSymbol ] };
+	key <AE09> { [ plus, 4, VoidSymbol, VoidSymbol ] };
+	key <AE10> { [ bracketright, 6, VoidSymbol, VoidSymbol ] };
+	key <AE11> { [ exclam, 8, VoidSymbol, VoidSymbol ] };
+	key <AE12> { [ numbersign, grave, VoidSymbol, VoidSymbol ] };
+
+	key <AD01> { [ semicolon, VoidSymbol, VoidSymbol, colon ] };
+	key <AD02> { [ comma, VoidSymbol, VoidSymbol, less ] };
+	key <AD03> { [ period, VoidSymbol, VoidSymbol, greater ] };
+	key <AD04> { [ p, VoidSymbol, VoidSymbol, P ] };
+	key <AD05> { [ y, VoidSymbol, VoidSymbol, Y ] };
+	key <AD06> { [ f, F, VoidSymbol, VoidSymbol ] };
+	key <AD07> { [ g, G, VoidSymbol, VoidSymbol ] };
+	key <AD08> { [ c, C, VoidSymbol, VoidSymbol ] };
+	key <AD09> { [ r, R, VoidSymbol, VoidSymbol ] };
+	key <AD10> { [ l, L, VoidSymbol, VoidSymbol ] };
+	key <AD11> { [ slash, question, VoidSymbol, VoidSymbol ] };
+	key <AD12> { [ at, asciicircum, VoidSymbol, VoidSymbol ] };
+
+	key <AC01> { [ a, VoidSymbol, VoidSymbol, A ] };
+	key <AC02> { [ o, VoidSymbol, VoidSymbol, O ] };
+	key <AC03> { [ e, VoidSymbol, VoidSymbol, E ] };
+	key <AC04> { [ u, VoidSymbol, VoidSymbol, U ] };
+	key <AC05> { [ i, VoidSymbol, VoidSymbol, I ] };
+	key <AC06> { [ d, D, VoidSymbol, VoidSymbol ] };
+	key <AC07> { [ h, H, VoidSymbol, VoidSymbol ] };
+	key <AC08> { [ t, T, VoidSymbol, VoidSymbol ] };
+	key <AC09> { [ n, N, VoidSymbol, VoidSymbol ] };
+	key <AC10> { [ s, S, VoidSymbol, VoidSymbol ] };
+	key <AC11> { [ minus, underscore, VoidSymbol, VoidSymbol ] };
+	key <BKSL> { [ backslash, bar, VoidSymbol, VoidSymbol ] };
+
+	key <AB01> { [ apostrophe, VoidSymbol, VoidSymbol, quotedbl ] };
+	key <AB02> { [ q, VoidSymbol, VoidSymbol, Q ] };
+	key <AB03> { [ j, VoidSymbol, VoidSymbol, J ] };
+	key <AB04> { [ k, VoidSymbol, VoidSymbol, K ] };
+	key <AB05> { [ x, X, VoidSymbol, X ] };
+	key <AB06> { [ b, B, VoidSymbol, VoidSymbol ] };
+	key <AB07> { [ m, M, VoidSymbol, VoidSymbol ] };
+	key <AB08> { [ w, W, VoidSymbol, VoidSymbol ] };
+	key <AB09> { [ v, V, VoidSymbol, VoidSymbol ] };
+	key <AB10> { [ z, Z, VoidSymbol, VoidSymbol ] };
+};

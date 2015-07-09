@@ -1,0 +1,7 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "complete"	};
+	xkb_symbols   { include "pc+us(dvp)+gb:2+inet(evdev)+capslock(backspace)+compose(102)+myswap(swap_ctrl_alt)+myswap(force_shift)"	};
+	xkb_geometry  { include "pc(pc105)"	};
+};

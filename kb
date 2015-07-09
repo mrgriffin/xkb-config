@@ -1,0 +1,2 @@
+#!/bin/sh
+xkbcomp -I"`dirname $0`" "`dirname $0`/keymap/mykbd" $DISPLAY
